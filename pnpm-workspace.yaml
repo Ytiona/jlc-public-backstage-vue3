@@ -1,4 +1,4 @@
 packages:
-  - packages/*/docs
-  - packages/*/play
-  - packages/*/library
+  - docs
+  - library
+  - play
