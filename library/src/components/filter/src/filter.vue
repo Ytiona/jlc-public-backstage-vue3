@@ -14,8 +14,8 @@
         :is="item.component"
         v-else
         v-model="bindForm[item.key]"
-        v-bind="item.attrs"
-        v-on="item.events"
+        v-bind="(item.attrs as any)"
+        v-on="(item.events as any)"
         class="w-full"
         @keydown.enter="onEnter(item)"
       >
@@ -25,8 +25,8 @@
             :is="child.component"
             v-for="(child, index) in item.children"
             :key="index"
-            v-bind="child.attrs"
-            v-on="child.events"
+            v-bind="(child.attrs as any)"
+            v-on="(child.events as any)"
           >
             <!-- 子组件内容render -->
             <component :is="child.render(bindForm)" v-if="child.render" />
@@ -35,7 +35,7 @@
           </component>
         </template>
         <!-- v-if不成立时，打包之后仍然会占据date-picker的默认插槽，以下临时处理方案 -->
-        <template v-if="item.component === 'el-date-picker'" #default="{ text }">
+        <template v-if="item.component === 'el-date-picker'" #default="{ text }: { text: string }">
           <div class="el-date-table-cell">
             <span class="el-date-table-cell__text">{{ text }}</span>
           </div>
@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts" name="filter">
-  import { VNode } from 'vue'
+  import { ref, computed, watch, VNode } from 'vue'
   import { compose } from '@/utils/tools'
   import merge from 'lodash/merge'
   import cloneDeep from 'lodash/cloneDeep'

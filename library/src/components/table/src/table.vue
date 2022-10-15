@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts" name="table">
-  import { VNode, h, Ref } from 'vue'
+  import { VNode, h, Ref, ref, computed, onMounted } from 'vue'
   import { ElButton } from 'element-plus'
   import { getEpTableCommonFns, EpTableCommonFns } from '@/utils/ep-table-common'
   // import { MessageBox, CircleClose } from '@element-plus/icons-vue'
@@ -180,6 +180,6 @@
   defineExpose(exoprtFns)
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import './table.scss';
 </style>

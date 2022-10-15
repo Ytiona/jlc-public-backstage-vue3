@@ -20,6 +20,6 @@
 
 <script setup lang="ts" name="jlc-layout"></script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import './filter-page-list.scss';
 </style>

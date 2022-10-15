@@ -48,7 +48,7 @@
   </layout>
 </template>
 
-<script setup lang="ts" name="pro-table">
+<script setup lang="ts" name="protable">
   import { useAttrs, computed, ref, onMounted, Ref } from 'vue'
 
   import Layout from '@/layouts/filter-page-list'
@@ -75,7 +75,7 @@
   type PageType = InstanceType<typeof JPage>
   type PageProps = PageType['$props']
 
-  interface Events {
+  interface VueEvents {
     [key: string]: (...args: any[]) => any
   }
 
@@ -93,13 +93,13 @@
       page?: boolean
 
       filterProps?: Partial<FilterProps>
-      filterEvents?: Events
+      filterEvents?: VueEvents
 
       tableProps?: Partial<TableProps>
-      tableEvents?: Events
+      tableEvents?: VueEvents
 
       pageProps?: Partial<PageProps>
-      pageEvents?: Events
+      pageEvents?: VueEvents
     }>(),
     {
       filters: () => [],
@@ -152,18 +152,10 @@
   const tableSlots = computed(() => getOptionSlots(props.columns))
 
   interface ExoprtFns {
-    refresh: Function
-    filter: Ref<{
-      query: FilterType['query']
-      reset: FilterType['reset']
-      epForm: FilterType['epForm']
-    }>
-    table: Ref<{
-      epTable: TableType['epTable']
-    }>
-    page: Ref<{
-      reset: PageType['reset']
-    }>
+    refresh: typeof refresh
+    filter: any
+    table: any
+    page: any
   }
 
   const exoprtFns: ExoprtFns & EpTableCommonFns = {

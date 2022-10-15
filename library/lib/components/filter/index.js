@@ -1,4 +1,4 @@
-import t from "../../utils/with-install.js";
+import { withInstall as t } from "../../utils/with-install.js";
 import r from "./src/filter.js";
 const l = t(r);
 export {

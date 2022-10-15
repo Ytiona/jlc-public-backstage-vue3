@@ -1,4 +1,6 @@
 import { DEFAULT_PAGE_SIZE } from '@/constants'
+import JlcFilter from '@/components/filter'
+import JlcPage from '@/components/page'
 
 import type { Ref } from 'vue'
 import type { Data } from '@/types'
@@ -16,9 +18,12 @@ interface Params {
   params: Ref
 }
 
+type FilterType = InstanceType<typeof JlcFilter>
+type PageType = InstanceType<typeof JlcPage>
+
 const useFilterPage = ({ props, emit, params }: Params) => {
-  const filterRef = ref()
-  const pageRef = ref()
+  const filterRef = ref<FilterType>()
+  const pageRef = ref<PageType>()
 
   const total = ref(0)
   const data = ref<unknown[]>([])
@@ -62,9 +67,9 @@ const useFilterPage = ({ props, emit, params }: Params) => {
   }
 
   const refresh = (resetPage = false): void => {
-    filterRef.value.reset(false)
+    filterRef.value!.reset(false)
     if (resetPage) {
-      pageRef.value.reset(false)
+      pageRef.value!.reset(false)
     }
     query()
   }

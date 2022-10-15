@@ -1,6 +1,5 @@
 import { openBlock as o, createElementBlock as r, createElementVNode as t, renderSlot as s } from "vue";
-import "./filter-page-list.vue?vue&type=style&index=0&scoped=1ae8d505&lang.css";
-import i from "../../_virtual/_plugin-vue_export-helper.js";
+/* empty css                                                                  */import i from "../../_virtual/_plugin-vue_export-helper.js";
 const d = {}, l = { class: "ftp-wrap" }, n = {
   class: "filter-wrap",
   ref: "filterWrap"
@@ -30,7 +29,7 @@ function _(e, u) {
     ], 512)
   ]);
 }
-const $ = /* @__PURE__ */ i(d, [["render", _], ["__scopeId", "data-v-1ae8d505"]]);
+const $ = /* @__PURE__ */ i(d, [["render", _], ["__scopeId", "data-v-3facd60e"]]);
 export {
   $ as default
 };

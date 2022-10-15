@@ -4,7 +4,7 @@ import I from "../../filter/index.js";
 import K from "../../table/index.js";
 import U from "../../page/index.js";
 import W from "../../../hooks/use-filter-page.js";
-import { getOptionSlots as E } from "./utils.js";
+import { getOptionSlots as E } from "./utils/index.js";
 import { getEpTableCommonEvents as X, getEpTableCommonFns as Y } from "../../../utils/ep-table-common.js";
 const ne = /* @__PURE__ */ G({
   __name: "pro-table",

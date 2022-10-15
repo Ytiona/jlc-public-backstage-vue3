@@ -16,18 +16,18 @@
 
   import type { ElPagination } from 'element-plus'
 
-  interface PageInfo {
+  export interface PageInfo {
     pageNum: number
     pageSize: number
   }
 
-  type ElPageType = InstanceType<typeof ElPagination>
-  type ElPageProps = ElPageType['$props']
+  export type ElPageType = InstanceType<typeof ElPagination>
+    export type ElPageProps = ElPageType['$props']
 
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface Props extends Partial<ElPageProps> {}
+  export interface Props extends Partial<ElPageProps> {}
 
-  interface Emits {
+  export interface Emits {
     (e: 'query', params: PageInfo, queryNow: boolean): void
   }
 
